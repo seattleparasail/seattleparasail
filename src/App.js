@@ -40,7 +40,7 @@ const App = ({ signOut }) => {
     setNotes(notesFromAPI);
   }
 
-  async function createNote(event) {
+  async function createNote(event) { 
     event.preventDefault();
     const form = new FormData(event.target);
     const image = form.get("image");
