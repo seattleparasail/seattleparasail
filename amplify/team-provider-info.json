@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifydeace769073a4-staging-195816-authRole",
+      "UnauthRoleArn": "arn:aws:iam::448353523063:role/amplify-amplifydeace769073a4-staging-195816-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::448353523063:role/amplify-amplifydeace769073a4-staging-195816-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-amplifydeace769073a4-staging-195816-deployment",
+      "UnauthRoleName": "amplify-amplifydeace769073a4-staging-195816-unauthRole",
+      "StackName": "amplify-amplifydeace769073a4-staging-195816",
+      "StackId": "arn:aws:cloudformation:us-west-2:448353523063:stack/amplify-amplifydeace769073a4-staging-195816/dd652700-56fa-11ed-80bf-02a43700faf5",
+      "AmplifyAppId": "dvf15wyzds6mp"
+    },
+    "categories": {
+      "auth": {
+        "seattleparasail6cc86908": {}
+      },
+      "api": {
+        "seattleparasail": {}
+      },
+      "storage": {
+        "images": {}
+      }
+    }
+  }
+}
