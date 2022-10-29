@@ -1,33 +1,19 @@
 import React from "react";
-import { makeStyles } from '@mui/styles';
-import Button from '@mui/material/Button';
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
-  homeContainer: {
+  background: {
     backgroundImage: `url("https://wallpaperaccess.com/full/235006.jpg")`,
-      /* Full height */
-      height: "100vh",
-
-      /* Center and scale the image nicely */
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
+    height: "100vh",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
   },
 });
 
-
 const Home = () => {
+  const classes = useStyles();
+  return <div className={classes.background}></div>;
+};
 
-    const curlyWavePic = ''
-    const classes = useStyles();
-
-    return (
-        <div className={classes.homeContainer}>
-
-          
-        
-        </div>
-    )
-}
-
-export default Home
+export default Home;
