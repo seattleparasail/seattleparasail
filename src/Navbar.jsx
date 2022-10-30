@@ -43,6 +43,8 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
+  const handleHamburgerClick = e => anchorElNav ? handleCloseNavMenu() : handleOpenNavMenu(e);
+
   const handleNavLinkClick = (e, route) => {
     e.preventDefault()
     handleCloseNavMenu()
@@ -95,9 +97,10 @@ const ResponsiveAppBar = () => {
                 horizontal: "right",
               }}
               open={Boolean(anchorElNav)}
-              onClose={e => handleNavLinkClick(e, page.route)}
+              onClose={e => handleNavLinkClick(e, '')}
               sx={{
                 display: { xs: "block", md: "none" },
+                cursor: 'pointer'
               }}
               PaperProps={{
                 style: {
@@ -107,7 +110,7 @@ const ResponsiveAppBar = () => {
                   height: "300px",
                   width: is600 ? "400px" : "100%",
                   marginLeft: is600 ? "25px" : "0px",
-                  marginTop: is600 ? "12px" : "8px",
+                  marginTop: is600 ? "8px" : "4px",
                 },
               }}
             >
@@ -135,7 +138,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <ParaglidingIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1, cursor: 'pointer' }}
             onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
@@ -173,7 +176,7 @@ const ResponsiveAppBar = () => {
             size="large"
             aria-controls="menu-appbar"
             aria-haspopup="true"
-            onClick={handleOpenNavMenu}
+            onClick={e => handleHamburgerClick(e)}
             color="inherit"
             sx={{ display: { md: "none" }, cursor: 'pointer'}}
           >
