@@ -51,6 +51,7 @@ const ResponsiveAppBar = () => {
     navigate(route)
   }
 
+  const is400 = useMediaQuery("(min-width:600px)");
   const is600 = useMediaQuery("(min-width:600px)");
 
   return (
@@ -149,6 +150,7 @@ const ResponsiveAppBar = () => {
             href=""
             sx={{
               mr: 2,
+              fontSize: is600 ? '24px' : '18px',
               display: { xs: "flex", md: "none" },
               flexGrow: 2,
               fontFamily: "monospace",
