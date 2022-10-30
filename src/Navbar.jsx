@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -17,9 +18,10 @@ import DirectionsBoatIcon from "@mui/icons-material/DirectionsBoat";
 import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 
 const pages = [
-  { name: "BOOK NOW", icon: CalendarMonthIcon },
-  { name: "TOURS", icon: DirectionsBoatIcon },
-  { name: "FAQ", icon: LiveHelpIcon },
+  { name: "HOME", icon: '', route: '/' },
+  { name: "BOOK NOW", icon: CalendarMonthIcon, route: '/book-now' },
+  { name: "TOURS", icon: DirectionsBoatIcon, route: '/tours' },
+  { name: "FAQ", icon: LiveHelpIcon, route: '/faq' },
 ];
 
 const useStyles = makeStyles({
@@ -30,7 +32,7 @@ const useStyles = makeStyles({
 
 const ResponsiveAppBar = () => {
   const classes = useStyles();
-
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -40,6 +42,14 @@ const ResponsiveAppBar = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const handleHamburgerClick = e => anchorElNav ? handleCloseNavMenu() : handleOpenNavMenu(e);
+
+  const handleNavLinkClick = (e, route) => {
+    e.preventDefault()
+    handleCloseNavMenu()
+    navigate(route)
+  }
 
   const is600 = useMediaQuery("(min-width:600px)");
 
@@ -51,14 +61,16 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <ParaglidingIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            sx={{ display: { xs: "none", md: "flex", cursor: 'pointer'}, mr: 1 }}
+            onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            onClick={e => handleNavLinkClick(e, '/')}
             sx={{
+              cursor: 'pointer',
               mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
@@ -85,9 +97,10 @@ const ResponsiveAppBar = () => {
                 horizontal: "right",
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              onClose={e => handleNavLinkClick(e, '')}
               sx={{
                 display: { xs: "block", md: "none" },
+                cursor: 'pointer'
               }}
               PaperProps={{
                 style: {
@@ -97,15 +110,15 @@ const ResponsiveAppBar = () => {
                   height: "300px",
                   width: is600 ? "400px" : "100%",
                   marginLeft: is600 ? "25px" : "0px",
-                  marginTop: is600 ? "12px" : "8px",
+                  marginTop: is600 ? "8px" : "4px",
                 },
               }}
             >
-              {pages.map((page) => {
+              {pages.filter(p => !!p.icon).map((page) => {
                 const PageIcon = page.icon;
 
                 return (
-                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <MenuItem key={page.name} onClick={e => handleNavLinkClick(e, page.route)}>
                     <div
                       style={{
                         display: "flex",
@@ -125,12 +138,14 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <ParaglidingIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1, cursor: 'pointer' }}
+            onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
             variant="h5"
             noWrap
             component="a"
+            onClick={e => handleNavLinkClick(e, '/')}
             href=""
             sx={{
               mr: 2,
@@ -147,10 +162,10 @@ const ResponsiveAppBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.filter(p => !!p.icon).map(page => (
               <Button
                 key={page.name}
-                onClick={handleCloseNavMenu}
+                onClick={e => handleNavLinkClick(e, page.route)}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page.name}
@@ -158,12 +173,12 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
           <IconButton
-            //   size="large"
+            size="large"
             aria-controls="menu-appbar"
             aria-haspopup="true"
-            onClick={handleOpenNavMenu}
+            onClick={e => handleHamburgerClick(e)}
             color="inherit"
-            sx={{ display: { md: "none" } }}
+            sx={{ display: { md: "none" }, cursor: 'pointer'}}
           >
             <MenuIcon />
           </IconButton>
