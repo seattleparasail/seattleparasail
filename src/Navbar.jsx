@@ -12,16 +12,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ParaglidingIcon from "@mui/icons-material/Paragliding";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import DirectionsBoatIcon from "@mui/icons-material/DirectionsBoat";
-import LiveHelpIcon from "@mui/icons-material/LiveHelp";
-
-const pages = [
-  { name: "HOME", icon: '', route: '/' },
-  { name: "BOOK NOW", icon: CalendarMonthIcon, route: '/book-now' },
-  { name: "TOURS", icon: DirectionsBoatIcon, route: '/tours' },
-  { name: "FAQ", icon: LiveHelpIcon, route: '/faq' },
-];
+import {pages} from './Pages'
 
 const ResponsiveAppBar = () => {
   const navigate = useNavigate();
