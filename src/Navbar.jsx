@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { makeStyles } from "@mui/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -24,14 +23,7 @@ const pages = [
   { name: "FAQ", icon: LiveHelpIcon, route: '/faq' },
 ];
 
-const useStyles = makeStyles({
-  hamburgerDropDown: {
-    backgroundColor: "rgba(0, 0, 0, 0.66)",
-  },
-});
-
 const ResponsiveAppBar = () => {
-  const classes = useStyles();
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
