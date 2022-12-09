@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
@@ -12,7 +12,10 @@ import { Amplify } from "aws-amplify";
 import config from "./aws-exports";
 Amplify.configure(config);
 
-render(
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+
+root.render(
   <BrowserRouter>
     <App></App>
     <Routes>
@@ -21,6 +24,4 @@ render(
       <Route path="/tours" element={<Tours />}></Route>
       <Route path="/faq" element={<Faq />}></Route>
     </Routes>
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+  </BrowserRouter>);

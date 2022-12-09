@@ -1,19 +1,19 @@
 import React from "react";
-import { makeStyles } from "@mui/styles";
+import styled from "@emotion/styled";
 
-const useStyles = makeStyles({
-  background: {
+const BackgroundDiv  = styled.div(
+  {
     backgroundImage: `url("https://wallpaperaccess.com/full/235006.jpg")`,
     height: "100vh",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-  },
-});
+  }
+)
 
 const Home = () => {
-  const classes = useStyles();
-  return <div className={classes.background}></div>;
+  return <BackgroundDiv />;
+
 };
 
 export default Home;
