@@ -13,10 +13,13 @@ const BackgroundDiv = styled.div(
 const SkyLineContainer = styled.div(
   {
     position: 'absolute',
-    bottom: '-.5vh',
+    bottom: '-5px',
     backgroundColor: 'transparent',
     height: 'auto',
-    width: '100%'
+    width: '100%',
+    '@media(min-width: 600px)' :  {
+      bottom: '-10px',
+    }
   }
 )
 
