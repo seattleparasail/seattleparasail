@@ -13,7 +13,6 @@ const BackgroundDiv  = styled.div(
 
 const Home = () => {
   return <BackgroundDiv />;
-
 };
 
 export default Home;
