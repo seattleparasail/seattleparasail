@@ -1,18 +1,30 @@
-import React from "react";
+import * as React from "react";
+import SkylineComponent from './images/SkylineComponent'
 import styled from "@emotion/styled";
 
-const BackgroundDiv  = styled.div(
+const BackgroundDiv = styled.div(
   {
-    backgroundImage: `url("https://wallpaperaccess.com/full/235006.jpg")`,
-    height: "100vh",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
+    background: `url('https://www.paradisecoast.com/sites/default/files/header-parasailing_couple_-_2017_-_ic8a7795.jpg') no-repeat 20% top fixed`,
+    backgroundSize: 'cover',
+    height: '100vh'
   }
 )
 
-const Home = () => {
-  return <BackgroundDiv />;
-};
+const SkyLineContainer = styled.div(
+  {
+    position: 'absolute',
+    bottom: '-.5vh',
+    backgroundColor: 'transparent',
+    height: 'auto',
+    width: '100%'
+  }
+)
 
+const Home = (props) => (
+  <BackgroundDiv >
+    <SkyLineContainer>
+      <SkylineComponent />
+    </SkyLineContainer>
+  </BackgroundDiv>
+);
 export default Home;
