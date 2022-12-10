@@ -5,6 +5,6 @@ export const theme = {
         cascadeForestGreen: '#0D4700',
         yellowGold: '#FFD100',
         galaxyGold: '#E8A900',
-        cascadeForestGreen_90_Opacity: '#0D4700E6'
+        cascadeForestGreen_50_Opacity: '#0D470099'
     }
 }
