@@ -30,12 +30,12 @@ const ResponsiveAppBar = () => {
   return (
     <AppBar
       position="absolute"
-      style={{ backgroundColor: theme.colors.cascadeForestGreen_90_Opacity}}
+      style={{ backgroundColor: theme.colors.cascadeForestGreen}}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <ParaglidingIcon
-            sx={{ fill: theme.colors.yellowGold, display: { xs: "none", md: "flex", cursor: 'pointer'}, mr: 1 }}
+            sx={{ fill: theme.colors.galaxyGold, display: { xs: "none", md: "flex", cursor: 'pointer'}, mr: 1 }}
             onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
@@ -50,7 +50,7 @@ const ResponsiveAppBar = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: theme.colors.yellowGold,
+              color: theme.colors.galaxyGold,
               textDecoration: "none",
             }}
           >
@@ -79,12 +79,12 @@ const ResponsiveAppBar = () => {
               PaperProps={{
                 style: {
                   position: "relative",
-                  backgroundColor: theme.colors.cascadeForestGreen_90_Opacity,
+                  backgroundColor: theme.colors.cascadeForestGreen,
                   zIndex: 700,
                   height: "300px",
                   width: is600 ? "400px" : "100%",
                   marginLeft: is600 ? "25px" : "0px",
-                  marginTop: is600 ? "8px" : "4px",
+                  marginTop: is600 ? "20px" : "15px",
                 },
               }}
             >
@@ -98,7 +98,7 @@ const ResponsiveAppBar = () => {
                         display: "flex",
                         alignItems: "center",
                         flexWrap: "wrap",
-                        color: theme.colors.yellowGold,
+                        color: theme.colors.galaxyGold,
                         margin: "5px auto",
                         paddingTop: "20px",
                       }}
@@ -112,7 +112,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <ParaglidingIcon
-            sx={{ fill: theme.colors.yellowGold, display: { xs: "flex", md: "none" }, mr: 1, cursor: 'pointer' }}
+            sx={{ fill: theme.colors.galaxyGold, display: { xs: "flex", md: "none" }, mr: 1, cursor: 'pointer' }}
             onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
@@ -126,9 +126,9 @@ const ResponsiveAppBar = () => {
               display: { xs: "flex", md: "none" },
               flexGrow: 2,
               fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: theme.colors.yellowGold,
+              fontWeight: 500,
+              letterSpacing: ".1rem",
+              color: theme.colors.galaxyGold,
               textDecoration: "none",
             }}
           >
@@ -140,7 +140,7 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page.name}
                 onClick={e => handleNavLinkClick(e, page.route)}
-                sx={{ my: 2, color: theme.colors.yellowGold, display: "block" }}
+                sx={{ my: 2, color: theme.colors.galaxyGold, display: "block" }}
               >
                 {page.name}
               </Button>
@@ -151,7 +151,7 @@ const ResponsiveAppBar = () => {
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={e => handleHamburgerClick(e)}
-            sx={{ fill: theme.colors.yellowGold,  display: { md: "none" }, cursor: 'pointer'}}
+            sx={{ fill: theme.colors.galaxyGold,  display: { md: "none" }, cursor: 'pointer'}}
           >
           
           </MenuIcon>
