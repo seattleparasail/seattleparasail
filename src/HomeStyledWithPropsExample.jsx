@@ -15,7 +15,6 @@ const BackgroundDiv  = styled.div(
 
 const Home = () => {
   return <BackgroundDiv image={`url("https://wallpaperaccess.com/full/235006.jpg")`}/>;
-
 };
 
 export default Home;

@@ -17,6 +17,7 @@
     "aws-amplify": "^5.0.5",
     "browserslist": "^4.21.4",
     "caniuse-lite": "^1.0.30001426",
+    "emotion-icons": "^3.27.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
@@ -24,7 +25,6 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start-dev": "react-scripts --openssl-legacy-provider start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

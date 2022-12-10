@@ -1,22 +1,13 @@
-import * as React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import ParaglidingIcon from "@mui/icons-material/Paragliding";
-import {pages} from './Pages'
+import { AppBar, Box, Button, Container, Toolbar, Typography, Menu, MenuItem, useMediaQuery} from "@mui/material";
+import{Paragliding as ParaglidingIcon, Menu as MenuIcon}  from "@mui/icons-material";
+import { pages } from './Pages'
+import { theme } from './Themes'
 
 const ResponsiveAppBar = () => {
   const navigate = useNavigate();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -39,12 +30,12 @@ const ResponsiveAppBar = () => {
   return (
     <AppBar
       position="absolute"
-      style={{ backgroundColor: "rgba(0, 0, 0, 0.66)" }}
+      style={{ backgroundColor: theme.colors.cascadeForestGreen_90_Opacity}}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <ParaglidingIcon
-            sx={{ display: { xs: "none", md: "flex", cursor: 'pointer'}, mr: 1 }}
+            sx={{ fill: theme.colors.yellowGold, display: { xs: "none", md: "flex", cursor: 'pointer'}, mr: 1 }}
             onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
@@ -59,7 +50,7 @@ const ResponsiveAppBar = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: theme.colors.yellowGold,
               textDecoration: "none",
             }}
           >
@@ -88,7 +79,7 @@ const ResponsiveAppBar = () => {
               PaperProps={{
                 style: {
                   position: "relative",
-                  backgroundColor: "rgba(0, 0, 0, 0.6)",
+                  backgroundColor: theme.colors.cascadeForestGreen_90_Opacity,
                   zIndex: 700,
                   height: "300px",
                   width: is600 ? "400px" : "100%",
@@ -107,7 +98,7 @@ const ResponsiveAppBar = () => {
                         display: "flex",
                         alignItems: "center",
                         flexWrap: "wrap",
-                        color: "white",
+                        color: theme.colors.yellowGold,
                         margin: "5px auto",
                         paddingTop: "20px",
                       }}
@@ -121,7 +112,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <ParaglidingIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1, cursor: 'pointer' }}
+            sx={{ fill: theme.colors.yellowGold, display: { xs: "flex", md: "none" }, mr: 1, cursor: 'pointer' }}
             onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
@@ -137,7 +128,7 @@ const ResponsiveAppBar = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: theme.colors.yellowGold,
               textDecoration: "none",
             }}
           >
@@ -149,25 +140,25 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page.name}
                 onClick={e => handleNavLinkClick(e, page.route)}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: theme.colors.yellowGold, display: "block" }}
               >
                 {page.name}
               </Button>
             ))}
           </Box>
-          <IconButton
+          <MenuIcon
             size="large"
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={e => handleHamburgerClick(e)}
-            color="inherit"
-            sx={{ display: { md: "none" }, cursor: 'pointer'}}
+            sx={{ fill: theme.colors.yellowGold,  display: { md: "none" }, cursor: 'pointer'}}
           >
-            <MenuIcon />
-          </IconButton>
+          
+          </MenuIcon>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
+
 export default ResponsiveAppBar;
