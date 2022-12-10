@@ -30,7 +30,7 @@ const ResponsiveAppBar = () => {
   return (
     <AppBar
       position="absolute"
-      style={{ backgroundColor: theme.colors.cascadeForestGreen}}
+      style={{ backgroundColor: theme.colors.cascadeForestGreen_50_Opacity}}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -79,7 +79,7 @@ const ResponsiveAppBar = () => {
               PaperProps={{
                 style: {
                   position: "relative",
-                  backgroundColor: theme.colors.cascadeForestGreen,
+                  backgroundColor: theme.colors.cascadeForestGreen_50_Opacity,
                   zIndex: 700,
                   height: "300px",
                   width: is600 ? "400px" : "100%",
