@@ -55,7 +55,7 @@ const ResponsiveAppBar = () => {
               textDecoration: "none",
             }}
           >
-            SEATTLE PARASAIL
+            PARASAIL SEATTLE
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -133,7 +133,7 @@ const ResponsiveAppBar = () => {
               textDecoration: "none",
             }}
           >
-            SEATTLE PARASAIL
+            PARASAIL SEATTLE
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
