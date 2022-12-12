@@ -7,7 +7,6 @@ const SVGComponent = (props) => (
   >
     <g
       transform="matrix(0.457914, 0, 0, 0.692847, 650.531006, 491.850708)"
-      // style={{position: 'relative'}}
     >
       <path
         style={{

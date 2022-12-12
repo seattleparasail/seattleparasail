@@ -25,7 +25,8 @@ const ResponsiveAppBar = () => {
     navigate(route)
   }
 
-  const is600 = useMediaQuery("(min-width:600px)");
+  const isAtLeast600 = useMediaQuery("(min-width:600px)");
+  const isAtLeast350 = useMediaQuery("(min-width:350px)");
 
   return (
     <AppBar
@@ -82,9 +83,9 @@ const ResponsiveAppBar = () => {
                   backgroundColor: theme.colors.cascadeForestGreen_50_Opacity,
                   zIndex: 700,
                   height: "300px",
-                  width: is600 ? "400px" : "100%",
-                  marginLeft: is600 ? "25px" : "0px",
-                  marginTop: is600 ? "20px" : "15px",
+                  width: isAtLeast600 ? "400px" : "100%",
+                  marginLeft: isAtLeast600 ? "25px" : "0px",
+                  marginTop: isAtLeast600 ? "20px" : "15px",
                 },
               }}
             >
@@ -116,7 +117,7 @@ const ResponsiveAppBar = () => {
             onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
-            variant="h5"
+            variant={isAtLeast350 ? 'h5': 'subtitle1'}
             noWrap
             component="a"
             onClick={e => handleNavLinkClick(e, '/')}
