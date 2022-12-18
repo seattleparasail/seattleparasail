@@ -20,70 +20,73 @@ const IntroTextBox = styled(Typography)(
     position: 'absolute',
     color: 'white',
     maxWidth: '300px',
-    marginTop: '35vh',
+    marginTop: '55vh',
     padding: '20px',
     zIndex: 2,
-    '@media(min-width: 600px)' :  {
-      marginTop: '35vh',
+    '@media(min-width: 600px)': {
       padding: '40px',
       maxWidth: '400px'
     },
+    '@media(min-width: 1000px)': {
+      marginTop: '35vh',
+      padding: '60px',
+    }
   }
 )
 
 const SvgContainer = styled.div(
   {
     position: 'absolute',
-    bottom: '-100px',
+    bottom: '-50px',
     backgroundColor: 'transparent',
     height: 'auto',
     width: '100%',
-    // '@media(min-width: 600px)' :  {
-    //   bottom: '-65px',
-    // },
-    // '@media(min-width: 1000px)' :  {
-    //   bottom: '-105px',
-    // }
+    '@media(min-width: 600px)': {
+      bottom: '-65px',
+    },
+    '@media(min-width: 1000px)': {
+      bottom: '-105px',
+    }
   }
 )
 
 const SvgBelowFill = styled.div(
   {
-    backgroundColor: theme.colors.cascadeForestGreen_50_Opacity,
-    // backgroundColor: 'purple',
-    height: '100px',
+    backgroundColor: 'white',
+    height: '200px',
     width: '100%',
     position: 'absolute',
-    bottom: '-195px'
-
+    bottom: '-245px',
+    '@media(min-width: 600px)': {
+      bottom: '-260px',
+    },
+    '@media(min-width: 1000px)': {
+      bottom: '-300px',
+    }
   })
-
-
-
-
 
 const Home = () => {
   const atLeast600 = useMediaQuery('(min-width:600px)');
   return (
-  <BackgroundDiv >
+    <BackgroundDiv >
 
-    <IntroTextBox>
-    <Typography variant={atLeast600 ? 'h3' : 'h4'}>FLYING HIGH.</Typography>
-      <Typography variant={atLeast600 ? 'h5' : 'h6'}>The Emerald City shines from a Seahawk's perspective.</Typography>
-      <Typography variant={atLeast600 ? 'h5' : 'h6'}>Explore and book your tour.</Typography>
-    </IntroTextBox>
+      <IntroTextBox>
+        <Typography variant={atLeast600 ? 'h3' : 'h4'}>FLYING HIGH.</Typography>
+        <Typography variant={atLeast600 ? 'h5' : 'h6'}>The Emerald City shines from a Seahawk's perspective.</Typography>
+        <Typography variant={atLeast600 ? 'h5' : 'h6'}>Explore and book your tour.</Typography>
+      </IntroTextBox>
 
-    <SvgContainer>
-      <SkylineSVG />
+      <SvgContainer>
+        <SkylineSVG />
 
-      <ForestSVG style={{ marginTop: '-5vh'}}/>
-
-
-    </SvgContainer>
-    <SvgBelowFill/>
+        <ForestSVG style={{ marginTop: '-5vh' }} />
 
 
+      </SvgContainer>
+      <SvgBelowFill />
 
-  </BackgroundDiv>
-)}
+
+    </BackgroundDiv>
+  )
+}
 export default Home;
