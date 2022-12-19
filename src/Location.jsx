@@ -11,9 +11,9 @@ const BackgroundDiv  = styled.div(
   }
 )
 
-const Tours = () => {
+const Location = () => {
   return <BackgroundDiv />;
 
 };
 
-export default Tours;
+export default Location;

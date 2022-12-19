@@ -5,7 +5,7 @@ import "./index.css";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import BookNow from "./BookNow";
-import Tours from "./Tours";
+import Location from "./Location";
 import Faq from "./Faq";
 import { Amplify } from "aws-amplify";
 import config from "./aws-exports";
@@ -20,7 +20,7 @@ root.render(
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/book-now" element={<BookNow />}></Route>
-      <Route path="/tours" element={<Tours />}></Route>
+      <Route path="/tours" element={<Location />}></Route>
       <Route path="/faq" element={<Faq />}></Route>
     </Routes>
   </BrowserRouter>
