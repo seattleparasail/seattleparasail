@@ -11,7 +11,7 @@ const BackgroundDiv = styled.div(
   {
     background: `url(${TandemFlagChute}) no-repeat center 90% fixed`,
     backgroundSize: 'cover',
-    maxWidth: '100%',
+    width: '100%',
     height: 'calc(100vh + 100px)',
     zIndex: 2
   }
@@ -70,6 +70,7 @@ const SvgBelowFill = styled.div(
 const Home = () => {
   const atLeast600 = useMediaQuery('(min-width:600px)');
   return (
+    <>
     <BackgroundDiv >
 
       <IntroTextBox>
@@ -86,10 +87,12 @@ const Home = () => {
 
       </SvgContainer>
       <SvgBelowFill />
-      <HomeOptions />
 
 
     </BackgroundDiv>
+      <HomeOptions />
+
+    </>
   )
 }
 export default Home;
