@@ -63,7 +63,7 @@ const circleOptions = [
 ]
 
 
-const TourCircles = () => {
+const HomeOptions = () => {
     return (
         <BackgroundDiv>
             <Box sx={{ position: 'absolute', flexGrow: 1 }}>
@@ -84,4 +84,4 @@ const TourCircles = () => {
 }
 
 
-export default TourCircles;
+export default HomeOptions;
