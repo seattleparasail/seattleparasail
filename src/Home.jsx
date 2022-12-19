@@ -20,15 +20,15 @@ const IntroTextBox = styled(Typography)(
     position: 'absolute',
     color: 'white',
     maxWidth: '300px',
-    marginTop: '55vh',
+    marginTop: '10vh',
     padding: '20px',
     zIndex: 2,
     '@media(min-width: 600px)': {
+      marginTop: '20vh',
       padding: '40px',
       maxWidth: '400px'
     },
     '@media(min-width: 1000px)': {
-      marginTop: '35vh',
       padding: '60px',
     }
   }
@@ -79,7 +79,7 @@ const Home = () => {
       <SvgContainer>
         <SkylineSVG />
 
-        <ForestSVG style={{ marginTop: '-5vh' }} />
+        <ForestSVG style={{ marginTop: '-5vh' }} />git
 
 
       </SvgContainer>
