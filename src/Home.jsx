@@ -11,7 +11,8 @@ const BackgroundDiv = styled.div(
   {
     background: `url(${TandemFlagChute}) no-repeat center 90% fixed`,
     backgroundSize: 'cover',
-    // height: 'calc(100vh + 100px)',
+    
+    height: 'calc(100vh + 100px)',
     zIndex: 2
   }
 )
@@ -70,8 +71,7 @@ const Home = () => {
   const atLeast600 = useMediaQuery('(min-width:600px)');
   return (
     <>
-    <BackgroundDiv >
-
+    <BackgroundDiv>
       <IntroTextBox>
         <Typography variant={atLeast600 ? 'h3' : 'h4'}>FLYING HIGH.</Typography>
         <Typography variant={atLeast600 ? 'h5' : 'h6'}>The Emerald City shines from a Seahawk's perspective.</Typography>
@@ -85,10 +85,11 @@ const Home = () => {
 
 
       </SvgContainer>
+          </BackgroundDiv>
+
       <SvgBelowFill />
 
 
-    </BackgroundDiv>
       <HomeOptions />
 
     </>
