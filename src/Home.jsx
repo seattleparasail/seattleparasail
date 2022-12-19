@@ -79,7 +79,7 @@ const Home = () => {
       <SvgContainer>
         <SkylineSVG />
 
-        <ForestSVG style={{ marginTop: '-5vh' }} />git
+        <ForestSVG style={{ marginTop: '-5vh' }} />
 
 
       </SvgContainer>
