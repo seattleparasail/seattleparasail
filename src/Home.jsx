@@ -11,7 +11,6 @@ const BackgroundDiv = styled.div(
   {
     background: `url(${TandemFlagChute}) no-repeat center 90% fixed`,
     backgroundSize: 'cover',
-    width: '100%',
     height: 'calc(100vh + 100px)',
     zIndex: 2
   }
