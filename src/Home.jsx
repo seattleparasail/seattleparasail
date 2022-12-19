@@ -2,6 +2,7 @@ import React from "react";
 import SkylineSVG from './images/SeattleSkyline'
 import ForestSVG from './images/Forest'
 import TandemFlagChute from './images/SmileyChute.jpg'
+import TourCircles from './TourCircles'
 import { Typography, useMediaQuery } from '@mui/material'
 import styled from "@emotion/styled";
 import { theme } from './Themes'
@@ -15,7 +16,7 @@ const BackgroundDiv = styled.div(
   }
 )
 
-const IntroTextBox = styled(Typography)(
+const IntroTextBox = styled.div(
   {
     position: 'absolute',
     color: 'white',
@@ -84,6 +85,7 @@ const Home = () => {
 
       </SvgContainer>
       <SvgBelowFill />
+      <TourCircles />
 
 
     </BackgroundDiv>

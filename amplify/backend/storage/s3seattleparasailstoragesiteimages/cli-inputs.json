@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3seattleparasailstoragesiteimages",
+  "bucketName": "seattleparasail-storage-site-images",
+  "policyUUID": "b2324ed4",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "DELETE",
+    "READ"
+  ]
+}
