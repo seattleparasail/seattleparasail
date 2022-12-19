@@ -68,8 +68,8 @@ const HomeOptions = () => {
         <BackgroundDiv>
             <Box sx={{ position: 'absolute', flexGrow: 1 }}>
                 <Grid container spacing={2}>
-                    {circleOptions.map((item) => (
-                        <Grid item xs={12} sm={6} md={4}>
+                    {circleOptions.map((item, idx) => (
+                        <Grid key={idx} item xs={12} sm={6} md={4}>
                             <Item>
                                 <Text>
                                     {item.title}
