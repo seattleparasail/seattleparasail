@@ -1,27 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Box, Avatar, Grid, Paper } from '@mui/material'
+import { Grid, Paper } from '@mui/material'
 import { theme } from './Themes'
 
-const BackgroundDiv = styled.div(
-    {
-        width: '100%',
-        height: '2000px',
-        backgroundColor: 'white',
-        position: 'absolute',
-        bottom: '-2045px',
-        '@media(min-width: 600px)': {
-            height: '1200px',
-            bottom: '-1260px',
-        },
-        '@media(min-width: 1000px)': {
-            bottom: '-1300px',
-        }
-    }
-)
-
 const Item = styled(Paper)({
-    
     backgroundColor: theme.colors.emeraldCityGreen_50_Opacity,
     width: '300px',
     height: '300px',
@@ -69,8 +51,7 @@ const circleOptions = [
 
 const HomeOptions = () => {
     return (
-        <BackgroundDiv>
-            <Grid container>
+            <Grid style={{marginTop: '20px'}} container>
                     {circleOptions.map((item, idx) => (
                         <Grid key={idx} item xs={12} sm={6} md={4}>
                             <Item>
@@ -81,7 +62,6 @@ const HomeOptions = () => {
                         </Grid>
                     ))}
             </Grid>
-        </BackgroundDiv>
     )
 }
 
