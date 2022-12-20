@@ -70,29 +70,28 @@ const SvgBelowFill = styled.div(
 const Home = () => {
   const atLeast600 = useMediaQuery('(min-width:600px)');
   return (
-    <BackgroundDiv >
+    <>
+      <BackgroundDiv >
 
-      <IntroTextBox>
-        <Typography variant={atLeast600 ? 'h3' : 'h4'}>FLYING HIGH.</Typography>
-        <Typography variant={atLeast600 ? 'h5' : 'h6'}>The Emerald City shines from a Seahawk's perspective.</Typography>
-        <Typography variant={atLeast600 ? 'h5' : 'h6'}>Explore and book your tour.</Typography>
-      </IntroTextBox>
+        <IntroTextBox>
+          <Typography variant={atLeast600 ? 'h3' : 'h4'}>FLYING HIGH.</Typography>
+          <Typography variant={atLeast600 ? 'h5' : 'h6'}>The Emerald City shines from a Seahawk's perspective.</Typography>
+          <Typography variant={atLeast600 ? 'h5' : 'h6'}>Explore and book your tour.</Typography>
+        </IntroTextBox>
 
-      <SvgContainer>
-        <SkylineSVG />
+        <SvgContainer>
+          <SkylineSVG />
 
-        <ForestSVG style={{ marginTop: '-5vh' }} />
-
-
-      </SvgContainer>
-      <SvgBelowFill>
-        <HomeOptions/>
-        </SvgBelowFill> 
+          <ForestSVG style={{ marginTop: '-5vh' }} />
 
 
+        </SvgContainer>
 
 
-    </BackgroundDiv>
+      </BackgroundDiv>
+      <SvgBelowFill />
+      <HomeOptions />
+    </>
   )
 }
 export default Home;
