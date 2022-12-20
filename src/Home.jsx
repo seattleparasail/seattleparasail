@@ -2,6 +2,8 @@ import React from "react";
 import SkylineSVG from './images/SeattleSkyline'
 import ForestSVG from './images/Forest'
 import TandemFlagChute from './images/SmileyChute.jpg'
+import TandemFlagChuteMobile from './images/SmileyChute1200*900.jpg'
+
 import HomeOptions from './HomeOptions'
 import { Typography, useMediaQuery } from '@mui/material'
 import styled from "@emotion/styled";
@@ -9,16 +11,12 @@ import { theme } from './Themes'
 
 const BackgroundDiv = styled.div(
   {
-    background: `url(${TandemFlagChute}) no-repeat center 90% fixed`,
-    backgroundSize: 'auto 100%',
+    background: `url(${TandemFlagChuteMobile}) no-repeat center 90% fixed`,
+    backgroundSize: 'cover',
     height: 'calc(100vh + 100px)',
     '@media(min-width: 800px)': {
-      maxWidth: '1200px',
+      background: `url(${TandemFlagChute}) no-repeat center 90% fixed`,
       backgroundSize: 'cover',
-
-    },
-    '@media(min-width: 100px)': {
-      maxWidth: 'unset',
     },
     zIndex: 2
   }
