@@ -51,7 +51,7 @@ const circleOptions = [
 
 const HomeOptions = () => {
     return (
-            <Grid style={{marginTop: '20px'}} container>
+            <Grid container>
                     {circleOptions.map((item, idx) => (
                         <Grid key={idx} item xs={12} sm={6} md={4}>
                             <Item>
