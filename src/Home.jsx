@@ -1,104 +1,64 @@
 import React from "react";
 import SkylineSVG from './images/SeattleSkyline'
 import ForestSVG from './images/Forest'
-import TandemFlagChute from './images/SmileyChute.jpg'
-import TandemFlagChuteMobile from './images/SmileyChute1200*900.jpg'
-
+import SmileyChute from './images/SmileyChute.jpg'
 import HomeOptions from './HomeOptions'
-import { Typography, useMediaQuery } from '@mui/material'
+import { useMediaQuery, Grid } from '@mui/material'
 import styled from "@emotion/styled";
-import { theme } from './Themes'
-
-const BackgroundDiv = styled.div(
-  {
-    background: `url(${TandemFlagChuteMobile}) no-repeat center 90% fixed`,
-    backgroundSize: 'cover',
-    height: 'calc(100vh + 100px)',
-    '@media(min-width: 800px)': {
-      background: `url(${TandemFlagChute}) no-repeat center 90% fixed`,
-      backgroundSize: 'cover',
-    },
-    zIndex: 2
-  }
-)
 
 const IntroTextBox = styled.div(
   {
     position: 'absolute',
     color: 'white',
-    maxWidth: '300px',
-    marginTop: '55vh',
+    maxWidth: '250px',
+    top: '45vh',
     padding: '20px',
+    fontSize: '20px',
     zIndex: 2,
     '@media(min-width: 600px)': {
-      marginTop: '50vh',
+      fontSize: '40px',
+      top: '35vh',
       padding: '40px',
       maxWidth: '400px'
     },
-    '@media(min-width: 1000px)': {
-      marginTop: '20vh',
+    '@media(min-width: 800px)': {
+      top: '5vh',
       padding: '60px',
     }
   }
 )
 
-const SvgContainer = styled.div(
-  {
-    position: 'absolute',
-    bottom: '-50px',
-    backgroundColor: 'transparent',
-    height: 'auto',
-    width: '100%',
-    '@media(min-width: 600px)': {
-      bottom: '-65px',
-    },
-    '@media(min-width: 1000px)': {
-      bottom: '-105px',
-    }
-  }
-)
-
-const SvgBelowFill = styled.div(
-  {
-    backgroundColor: 'white',
-    height: '2400px',
-    width: '100%',
-    position: 'absolute',
-    bottom: '-2445px',
-    '@media(min-width: 600px)': {
-      height: '1200px',
-      bottom: '-1260px',
-    },
-    '@media(min-width: 1000px)': {
-      bottom: '-1300px',
-    }
-  })
+const BackgroundDiv = styled.div({
+  background: `url(${SmileyChute}) no-repeat center 90% fixed`,
+  backgroundSize: 'cover',
+  height: '105vh'
+})
 
 const Home = () => {
   const atLeast600 = useMediaQuery('(min-width:600px)');
   return (
-    <>
-      <BackgroundDiv >
 
+    <Grid container>
+
+      <Grid item xs={12}>
+        <BackgroundDiv />
         <IntroTextBox>
-          <Typography variant={atLeast600 ? 'h3' : 'h4'}>FLYING HIGH.</Typography>
-          <Typography variant={atLeast600 ? 'h5' : 'h6'}>The Emerald City shines from a Seahawk's perspective.</Typography>
-          <Typography variant={atLeast600 ? 'h5' : 'h6'}>Explore and book your tour.</Typography>
+          <p style={{fontWeight: 900}}>
+            FLYING HIGH.
+          </p>
+          <p>
+          The Emerald City shines from a Seahawk's perspective. Explore and book your tour.
+          </p>
         </IntroTextBox>
-
-        <SvgContainer>
-          <SkylineSVG />
-
-          <ForestSVG style={{ marginTop: '-5vh' }} />
-
-
-        </SvgContainer>
-
+        <SkylineSVG style={{ position: 'absolute', bottom: atLeast600 ? '-2vh' : '-3vh' }} />
+        <ForestSVG style={{ position: 'absolute', bottom: '-5vh' }} />
+      </Grid>
+      
+      <Grid item xs={12}>
         <HomeOptions />
+      </Grid>
 
-      </BackgroundDiv>
-      {/* <SvgBelowFill /> */}
-    </>
+    </Grid>
   )
 }
 export default Home;
