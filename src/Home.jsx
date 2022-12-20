@@ -2,6 +2,7 @@ import React from "react";
 import SkylineSVG from './images/SeattleSkyline'
 import ForestSVG from './images/Forest'
 import TandemFlagChute from './images/SmileyChute.jpg'
+import HomeOptions from './HomeOptions'
 import { Typography, useMediaQuery } from '@mui/material'
 import styled from "@emotion/styled";
 import { theme } from './Themes'
@@ -15,7 +16,7 @@ const BackgroundDiv = styled.div(
   }
 )
 
-const IntroTextBox = styled(Typography)(
+const IntroTextBox = styled.div(
   {
     position: 'absolute',
     color: 'white',
@@ -53,15 +54,15 @@ const SvgContainer = styled.div(
 const SvgBelowFill = styled.div(
   {
     backgroundColor: 'white',
-    height: '200px',
+    height: '1000px',
     width: '100%',
     position: 'absolute',
-    bottom: '-245px',
+    bottom: '-1045px',
     '@media(min-width: 600px)': {
-      bottom: '-260px',
+      bottom: '-1060px',
     },
     '@media(min-width: 1000px)': {
-      bottom: '-300px',
+      bottom: '-1100px',
     }
   })
 
@@ -83,7 +84,11 @@ const Home = () => {
 
 
       </SvgContainer>
-      <SvgBelowFill />
+      <SvgBelowFill>
+        <HomeOptions/>
+        </SvgBelowFill> 
+
+
 
 
     </BackgroundDiv>
