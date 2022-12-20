@@ -12,6 +12,16 @@ const BackgroundDiv = styled.div(
     background: `url(${TandemFlagChute}) no-repeat center 90% fixed`,
     backgroundSize: 'cover',
     height: 'calc(100vh + 100px)',
+    maxWidth: '500px',
+    '@media(min-width: 600px)': {
+      maxWidth: '500px',
+    },
+    '@media(min-width: 800px)': {
+      maxWidth: '1200px',
+    },
+    '@media(min-width: 100px)': {
+      maxWidth: 'unset',
+    },
     zIndex: 2
   }
 )
@@ -21,15 +31,16 @@ const IntroTextBox = styled.div(
     position: 'absolute',
     color: 'white',
     maxWidth: '300px',
-    marginTop: '10vh',
+    marginTop: '55vh',
     padding: '20px',
     zIndex: 2,
     '@media(min-width: 600px)': {
-      marginTop: '20vh',
+      marginTop: '50vh',
       padding: '40px',
       maxWidth: '400px'
     },
     '@media(min-width: 1000px)': {
+      marginTop: '20vh',
       padding: '60px',
     }
   }
