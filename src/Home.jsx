@@ -30,14 +30,6 @@ const IntroTextBox = styled.div(
   }
 )
 
-const BackgroundDiv = styled.div({
-  background: `url(${SmileyChute}) no-repeat center 80% fixed`,
-  backgroundSize: 'cover',
-  height: ({funk}) => {
-    console.log('props44', props)
-    return (`calc(${funk()}px + 10px)`)}
-})
-
 const Home = () => {
 
   const [pageHeight, setPageHeight] = useState(window.innerHeight)
