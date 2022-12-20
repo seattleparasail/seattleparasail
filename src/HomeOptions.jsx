@@ -7,7 +7,7 @@ const BackgroundDiv = styled.div(
     {
         width: '100%',
         position: 'absolute',
-        bottom: '-2245px',
+        bottom: '-2045px',
         '@media(min-width: 600px)': {
             height: '1200px',
             bottom: '-1260px',
@@ -69,8 +69,8 @@ const circleOptions = [
 const HomeOptions = () => {
     return (
         <BackgroundDiv>
-                <Grid container spacing={2}>
-                    {circleOptions.map((item, idx) => (
+            Under Construction
+                    {/* {circleOptions.map((item, idx) => (
                         <Grid key={idx} item xs={12} sm={6} md={4}>
                             <Item>
                                 <Text>
@@ -78,8 +78,7 @@ const HomeOptions = () => {
                                 </Text>
                             </Item>
                         </Grid>
-                    ))}
-                </Grid>
+                    ))} */}
         </BackgroundDiv>
     )
 }
