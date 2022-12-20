@@ -6,6 +6,8 @@ import { theme } from './Themes'
 const BackgroundDiv = styled.div(
     {
         width: '100%',
+        height: '2000px',
+        backgroundColor: 'white',
         position: 'absolute',
         bottom: '-2045px',
         '@media(min-width: 600px)': {
@@ -23,7 +25,6 @@ const Item = styled(Paper)({
     backgroundColor: theme.colors.emeraldCityGreen_50_Opacity,
     width: '300px',
     height: '300px',
-    // margin: '5px',
     '@media(min-width: 1200px)': {
         width: '350px',
         height: '350px',
@@ -69,8 +70,8 @@ const circleOptions = [
 const HomeOptions = () => {
     return (
         <BackgroundDiv>
-            Under Construction
-                    {/* {circleOptions.map((item, idx) => (
+            <Grid container>
+                    {circleOptions.map((item, idx) => (
                         <Grid key={idx} item xs={12} sm={6} md={4}>
                             <Item>
                                 <Text>
@@ -78,7 +79,8 @@ const HomeOptions = () => {
                                 </Text>
                             </Item>
                         </Grid>
-                    ))} */}
+                    ))}
+            </Grid>
         </BackgroundDiv>
     )
 }

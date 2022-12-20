@@ -10,7 +10,7 @@ import { theme } from './Themes'
 const BackgroundDiv = styled.div(
   {
     background: `url(${TandemFlagChute}) no-repeat center 90% fixed`,
-    backgroundSize: 'cover',
+    backgroundSize: 'auto 100%',
     height: 'calc(100vh + 100px)',
     maxWidth: '500px',
     '@media(min-width: 600px)': {
@@ -18,11 +18,13 @@ const BackgroundDiv = styled.div(
     },
     '@media(min-width: 800px)': {
       maxWidth: '1200px',
+      backgroundSize: 'cover',
+
     },
     '@media(min-width: 100px)': {
       maxWidth: 'unset',
     },
-    zIndex: 2
+    // zIndex: 2
   }
 )
 
@@ -98,10 +100,10 @@ const Home = () => {
 
         </SvgContainer>
 
+        <HomeOptions />
 
       </BackgroundDiv>
-      <SvgBelowFill />
-      <HomeOptions />
+      {/* <SvgBelowFill /> */}
     </>
   )
 }
