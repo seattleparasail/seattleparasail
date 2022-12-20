@@ -12,10 +12,6 @@ const BackgroundDiv = styled.div(
     background: `url(${TandemFlagChute}) no-repeat center 90% fixed`,
     backgroundSize: 'auto 100%',
     height: 'calc(100vh + 100px)',
-    maxWidth: '500px',
-    '@media(min-width: 600px)': {
-      maxWidth: '500px',
-    },
     '@media(min-width: 800px)': {
       maxWidth: '1200px',
       backgroundSize: 'cover',
@@ -24,7 +20,7 @@ const BackgroundDiv = styled.div(
     '@media(min-width: 100px)': {
       maxWidth: 'unset',
     },
-    // zIndex: 2
+    zIndex: 2
   }
 )
 
