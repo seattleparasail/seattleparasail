@@ -54,15 +54,16 @@ const SvgContainer = styled.div(
 const SvgBelowFill = styled.div(
   {
     backgroundColor: 'white',
-    height: '1000px',
+    height: '2400px',
     width: '100%',
     position: 'absolute',
-    bottom: '-1045px',
+    bottom: '-2445px',
     '@media(min-width: 600px)': {
-      bottom: '-1060px',
+      height: '1200px',
+      bottom: '-1260px',
     },
     '@media(min-width: 1000px)': {
-      bottom: '-1100px',
+      bottom: '-1300px',
     }
   })
 

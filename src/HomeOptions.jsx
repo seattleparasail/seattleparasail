@@ -14,6 +14,7 @@ const Item = styled(Paper)({
     backgroundColor: theme.colors.emeraldCityGreen_50_Opacity,
     width: '300px',
     height: '300px',
+    // margin: '5px',
     '@media(min-width: 1200px)': {
         width: '350px',
         height: '350px',
@@ -58,7 +59,6 @@ const circleOptions = [
 
 const HomeOptions = () => {
     return (
-        <BackgroundDiv>
                 <Grid container spacing={2}>
                     {circleOptions.map((item, idx) => (
                         <Grid key={idx} item xs={12} sm={6} md={4}>
@@ -70,7 +70,6 @@ const HomeOptions = () => {
                         </Grid>
                     ))}
                 </Grid>
-        </BackgroundDiv>
     )
 }
 
