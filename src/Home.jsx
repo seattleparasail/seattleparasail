@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect, useLayoutEffect} from "react";
 import SkylineSVG from './images/SeattleSkyline'
 import ForestSVG from './images/Forest'
 import SmileyChute from './images/SmileyChute.jpg'
@@ -23,25 +23,45 @@ const IntroTextBox = styled.div(
     },
     '@media(min-width: 800px)': {
       top: '5vh',
-      padding: '60px',
+      padding: '30px',
+      maxWidth: '450px'
+
     }
   }
 )
 
 const BackgroundDiv = styled.div({
-  background: `url(${SmileyChute}) no-repeat center 90% fixed`,
+  background: `url(${SmileyChute}) no-repeat center 80% fixed`,
   backgroundSize: 'cover',
-  height: '105vh'
+  height: ({funk}) => {
+    console.log('props44', props)
+    return (`calc(${funk()}px + 10px)`)}
 })
 
 const Home = () => {
+
+  const [pageHeight, setPageHeight] = useState(window.innerHeight)
+
+  const updateSize = () => setPageHeight(window.innerHeight)
+
+
+  useLayoutEffect(() => {
+    
+    window.addEventListener('resize', updateSize)
+    return () => window.removeEventListener('resize', updateSize);
+  }, [])
+
   const atLeast600 = useMediaQuery('(min-width:600px)');
   return (
 
     <Grid container>
 
       <Grid item xs={12}>
-        <BackgroundDiv />
+        <div style={{
+          background: `url(${SmileyChute}) no-repeat center center fixed`,
+          backgroundSize: 'cover',
+          height: atLeast600 ? `${pageHeight + 100}px` : `${pageHeight + 25}px`
+          }}/>
         <IntroTextBox>
           <p style={{fontWeight: 900}}>
             FLYING HIGH.
@@ -50,8 +70,8 @@ const Home = () => {
           The Emerald City shines from a Seahawk's perspective. Explore and book your tour.
           </p>
         </IntroTextBox>
-        <SkylineSVG style={{ position: 'absolute', bottom: atLeast600 ? '-2vh' : '-3vh' }} />
-        <ForestSVG style={{ position: 'absolute', bottom: '-5vh' }} />
+        <SkylineSVG style={{  position: 'absolute', top: `${atLeast600 ? pageHeight - 200 : pageHeight-90}px`}} />
+        <ForestSVG style={{ height: '100px', position: 'absolute', width: '100%', top: `${atLeast600 ? pageHeight + 25 : pageHeight -35}px` }}  />
       </Grid>
       
       <Grid item xs={12}>
