@@ -2,14 +2,12 @@ import React, {useState, useEffect, useLayoutEffect} from "react";
 import SkylineSVG from './images/SeattleSkyline'
 import ForestSVG from './images/Forest'
 import SmileyChute from './images/SmileyChute.jpg'
-import SmileyChuteMobile from './images/SmileyChuteMobile.jpg'
-
 import HomeOptions from './HomeOptions'
-import { useMediaQuery, Grid, Container, Paper } from '@mui/material'
 import styled from "@emotion/styled";
 
 const BackgroundDiv = styled.div(
   {
+    height: `calc(100vh + 25px)`,
     backgroundImage: `url(${SmileyChute})`,
     backgroundPosition: "center 90%",
     backgroundRepeat: "no-repeat",
@@ -17,18 +15,24 @@ const BackgroundDiv = styled.div(
   }
 )
 
+const SVGContainer = styled.div({
+  position: 'absolute',
+  bottom: `-30px`,
+  width: '100%'
+})
+
 const IntroTextBox = styled.div(
   {
     position: 'absolute',
     color: 'white',
     maxWidth: '250px',
-    top: '10vh',
+    top: '45vh',
     padding: '20px',
     fontSize: '20px',
     zIndex: 2,
-    '@media(min-width: 600px)': {
+    '@media(min-width: 768px)': {
       fontSize: '40px',
-      top: '35vh',
+      top: '20vh',
       padding: '40px',
       maxWidth: '400px'
     },
@@ -42,10 +46,9 @@ const IntroTextBox = styled.div(
 )
 
 const Home = () => {
-    const lessThan600 = useMediaQuery('(max-width:600px)');
 
   return (<>
-    <BackgroundDiv style={{ height: !lessThan600 ? `calc(100vh + 140px)` : `calc(100vh + 25px)`}}/>
+    <BackgroundDiv/>
           <IntroTextBox>
           <p style={{fontWeight: 900}}>
             FLYING HIGH.
@@ -54,10 +57,12 @@ const Home = () => {
           The Emerald City shines from a Seahawk's perspective. Explore and book your tour.
           </p>
         </IntroTextBox>
-    <SkylineSVG style={{ position: 'absolute', top: !lessThan600 ? `calc(100vh - 250px)` : `calc(100vh - 90px)` }} />
-    <ForestSVG style={{ height: '100px', position: 'absolute', width: '100%', top: !lessThan600 ? `calc(100vh + 65px)` : `calc(100vh - 35px)` }} />
+        <SVGContainer>
+      <SkylineSVG />
+      <ForestSVG style={{marginTop: '-10px'}} />
+        </SVGContainer>
+
     <HomeOptions/>
 </>)}
-
 
 export default Home
