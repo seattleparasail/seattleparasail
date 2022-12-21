@@ -41,10 +41,10 @@ const SVGContainer = styled.div({
 })
 
 const SVGBelowFill = styled.div({
-  backgroundColor: 'white',
+  backgroundColor: 'purple',
   zIndex: -1,
   position: 'absolute',
-  bottom: `-180px`,
+  bottom: `-200px`,
   width: '100%',
   minHeight: '150px'
 })
