@@ -46,6 +46,7 @@ const Footer = () => {
 const FooterContainer = styled.div(
     {
         position: 'relative',
+        marginTop: '100px',
         minHeight: '100px',
         width: '100%',
         backgroundColor: theme.colors.cascadeForestGreen_50_Opacity

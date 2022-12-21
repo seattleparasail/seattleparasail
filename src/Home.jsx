@@ -40,11 +40,11 @@ const SVGContainer = styled.div({
 })
 
 const SVGBelowFill = styled.div({
-  backgroundColor: 'white',
+  backgroundColor: 'white ',
   position: 'absolute',
-  bottom: `-100px`,
+  bottom: `-200px`,
   width: '100%',
-  minHeight: '50px'
+  minHeight: '150px'
 })
 
 const IntroTextBox = styled.div(
