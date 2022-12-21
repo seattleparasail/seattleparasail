@@ -1,5 +1,4 @@
-import * as React from "react";
-import { theme } from '../Themes'
+import React from "react";
 
 const SVGComponent = (props) => (
   <svg

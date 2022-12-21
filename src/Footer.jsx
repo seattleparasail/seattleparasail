@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Grid } from '@mui/material'
-import { theme } from './Themes'
+import { theme } from './StylesAndThemes/Themes'
 
 const FooterText = styled.p({
     color: theme.colors.galaxyGold,

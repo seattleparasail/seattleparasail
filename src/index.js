@@ -10,6 +10,8 @@ import Faq from "./Faq";
 import Footer from "./Footer"
 import { Amplify } from "aws-amplify";
 import config from "./aws-exports";
+import { Global } from '@emotion/react'
+import GlobalStyles from './StylesAndThemes/GlobalStyles'
 Amplify.configure(config);
 
 const container = document.getElementById('root');
@@ -17,6 +19,7 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <BrowserRouter>
+  <Global styles={GlobalStyles}/>
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home />}></Route>
