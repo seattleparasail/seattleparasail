@@ -1,11 +1,29 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Grid, Paper } from '@mui/material'
-import { theme } from './Themes'
+import SmileyChute from './images/SmileyChute.jpg'
+
+const HomeOptions = () => {
+    return (
+        <Grid container style={{ marginTop: '150px' }}>
+            {circleOptions.map((item, idx) => (
+                <Grid key={idx} item xs={12} sm={6} md={4}>
+                    <Item style={{ backgroundImage: item.image }}>
+                        <Text>
+                            {item.title}
+                        </Text>
+                    </Item>
+                </Grid>
+            ))}
+        </Grid>
+    )
+}
 
 const Item = styled(Paper)({
     border: '3px solid black',
-    // backgroundColor: theme.colors.yellowGold,
+    backgroundPosition: "center 90%",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
     width: '300px',
     height: '300px',
     '@media(min-width: 1200px)': {
@@ -19,52 +37,34 @@ const Item = styled(Paper)({
 
 const Text = styled.p({
     paddingTop: '50%',
-    color: 'black'
+    color: 'white'
 })
 
 const circleOptions = [
     {
         title: 'Parasail Flights',
-        image: ''
+        image: `url(${SmileyChute})`
     },
     {
         title: 'Photo Video',
-        image: ''
+        image: `url(${SmileyChute})`
     },
     {
         title: 'Book Now',
-        image: ''
+        image: `url(${SmileyChute})`
     },
     {
         title: 'Observers',
-        image: ''
+        image: `url(${SmileyChute})`
     },
     {
         title: 'Private and Corporate',
-        image: ''
+        image: `url(${SmileyChute})`
     },
     {
         title: 'FAQ',
-        image: ''
+        image: `url(${SmileyChute})`
     }
 ]
-
-
-const HomeOptions = () => {
-    return (
-            <Grid container style={{marginTop: '150px'}}>
-                    {circleOptions.map((item, idx) => (
-                        <Grid key={idx} item xs={12} sm={6} md={4}>
-                            <Item>
-                                <Text>
-                                    {item.title}
-                                </Text>
-                            </Item>
-                        </Grid>
-                    ))}
-            </Grid>
-    )
-}
-
 
 export default HomeOptions;

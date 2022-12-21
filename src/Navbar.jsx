@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AppBar, Box, Button, Container, Toolbar, Typography, Menu, MenuItem, useMediaQuery} from "@mui/material";
 import{Paragliding as ParaglidingIcon, Menu as MenuIcon}  from "@mui/icons-material";
 import { pages } from './Pages'
-import { theme } from './Themes'
+import { theme } from './StylesAndThemes/Themes'
 
 const ResponsiveAppBar = () => {
   const navigate = useNavigate();
