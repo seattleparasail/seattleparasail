@@ -44,7 +44,7 @@ const SVGBelowFill = styled.div({
   backgroundColor: 'white',
   zIndex: -1,
   position: 'absolute',
-  bottom: `-200px`,
+  bottom: `-180px`,
   width: '100%',
   minHeight: '150px'
 })
