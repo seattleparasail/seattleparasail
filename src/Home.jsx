@@ -30,6 +30,7 @@ const BackgroundDiv = styled.div(
     backgroundPosition: "center 90%",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    zIndex: -2
   }
 )
 
@@ -40,7 +41,8 @@ const SVGContainer = styled.div({
 })
 
 const SVGBelowFill = styled.div({
-  backgroundColor: 'white ',
+  backgroundColor: 'white',
+  zIndex: -1,
   position: 'absolute',
   bottom: `-200px`,
   width: '100%',
