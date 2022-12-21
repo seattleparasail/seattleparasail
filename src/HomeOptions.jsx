@@ -4,21 +4,22 @@ import { Grid, Paper } from '@mui/material'
 import { theme } from './Themes'
 
 const Item = styled(Paper)({
-    backgroundColor: theme.colors.emeraldCityGreen_50_Opacity,
+    border: '3px solid black',
+    // backgroundColor: theme.colors.yellowGold,
     width: '300px',
     height: '300px',
     '@media(min-width: 1200px)': {
         width: '350px',
         height: '350px',
     },
-    margin: '20px auto',
+    margin: '25px auto',
     borderRadius: '50%',
     textAlign: 'center',
 })
 
 const Text = styled.p({
     paddingTop: '50%',
-    color: 'white'
+    color: 'black'
 })
 
 const circleOptions = [
@@ -51,7 +52,7 @@ const circleOptions = [
 
 const HomeOptions = () => {
     return (
-            <Grid container>
+            <Grid container style={{marginTop: '70px'}}>
                     {circleOptions.map((item, idx) => (
                         <Grid key={idx} item xs={12} sm={6} md={4}>
                             <Item>

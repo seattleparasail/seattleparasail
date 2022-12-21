@@ -1,13 +1,31 @@
-import React, {useState, useEffect, useLayoutEffect} from "react";
+import React from "react";
 import SkylineSVG from './images/SeattleSkyline'
 import ForestSVG from './images/Forest'
 import SmileyChute from './images/SmileyChute.jpg'
 import HomeOptions from './HomeOptions'
 import styled from "@emotion/styled";
 
+const Home = () => {
+
+  return (<>
+    <BackgroundDiv />
+    <IntroTextBox>
+      <p style={{ fontWeight: 900 }}>FLYING HIGH.</p>
+      <p>The Emerald City shines from a Seahawk's perspective. Explore and book your tour.</p>
+    </IntroTextBox>
+    <SVGContainer>
+      <SkylineSVG />
+      <ForestSVG style={{ marginTop: '-10px' }} />
+    </SVGContainer>
+    <SVGBelowFill/>
+
+    <HomeOptions />
+  </>)
+}
+
 const BackgroundDiv = styled.div(
   {
-    height: `calc(100vh + 25px)`,
+    height: `calc(100vh + 50px)`,
     backgroundImage: `url(${SmileyChute})`,
     backgroundPosition: "center 90%",
     backgroundRepeat: "no-repeat",
@@ -17,8 +35,16 @@ const BackgroundDiv = styled.div(
 
 const SVGContainer = styled.div({
   position: 'absolute',
-  bottom: `-30px`,
-  width: '100%'
+  bottom: `-55px`,
+  width: '100%',
+})
+
+const SVGBelowFill = styled.div({
+  backgroundColor: 'white',
+  position: 'absolute',
+  bottom: `-100px`,
+  width: '100%',
+  minHeight: '50px'
 })
 
 const IntroTextBox = styled.div(
@@ -44,25 +70,5 @@ const IntroTextBox = styled.div(
     }
   }
 )
-
-const Home = () => {
-
-  return (<>
-    <BackgroundDiv/>
-          <IntroTextBox>
-          <p style={{fontWeight: 900}}>
-            FLYING HIGH.
-          </p>
-          <p>
-          The Emerald City shines from a Seahawk's perspective. Explore and book your tour.
-          </p>
-        </IntroTextBox>
-        <SVGContainer>
-      <SkylineSVG />
-      <ForestSVG style={{marginTop: '-10px'}} />
-        </SVGContainer>
-
-    <HomeOptions/>
-</>)}
 
 export default Home
