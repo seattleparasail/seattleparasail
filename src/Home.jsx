@@ -1,27 +1,33 @@
-import React from "react";
+import React, {useContext} from "react";
 import SkylineSVG from './images/SeattleSkyline'
 import ForestSVG from './images/Forest'
 import SmileyChute from './images/SmileyChute.jpg'
 import HomeOptions from './HomeOptions'
+import ThemeSelector from './ThemeSelector'
 import styled from "@emotion/styled";
 import { css, keyframes } from '@emotion/css'
 import { Anchor as AnchorIcon } from "@mui/icons-material";
+import {AppContext} from './index'
 
 const Home = () => {
 
+  const AppContextState = useContext(AppContext)
+  const { currentTheme } = AppContextState
+
   return (<>
     <BackgroundDiv />
+    <ThemeSelector/>
     <IntroTextBox>
       <p style={{ fontWeight: 900 }}>FLYING HIGH.</p>
       <p>The Emerald City shines from a Seahawk's perspective. Explore and book your tour.</p>
     </IntroTextBox>
     <SVGContainer>
-      <SkylineSVG />
+      <SkylineSVG style={{ fill: 'white'}}/>
       <ForestSVG style={{ marginTop: '-10px' }} />
     </SVGContainer>
     <SVGBelowFill />
-    <AnchorText>Anchors Aweigh</AnchorText>
-    <AnchorIconStyled className={css`animation: ${bounce} 5s ease infinite;`} />
+    <AnchorText style={{ color: currentTheme.colors.wildcard}}>Anchors Aweigh</AnchorText>
+    <AnchorIconStyled style={{fill: currentTheme.colors.wildcard}} className={css`animation: ${bounce} 5s ease infinite;`} />
     <HomeOptions />
   </>)
 }
@@ -30,11 +36,11 @@ const AnchorText = styled.p({
   fontSize: '20px',
   fontFamily: 'Trade Winds',
   position: 'absolute',
-  bottom: `-115px`,
+  bottom: `-150px`,
   textAlign: 'center',
   width: '100%',
   '@media(min-width: 768px)': {
-    bottom: `-130px`,
+    bottom: `-155px`,
     fontSize: '35px',
   },
 
@@ -42,13 +48,13 @@ const AnchorText = styled.p({
 
 const AnchorIconStyled = styled(AnchorIcon)({
   position: `absolute`,
-  bottom: `-190px`,
+  bottom: `-210px`,
   width: `100%`,
-  height: `50px`,
+  height: `40px`,
   transformOrigin: 'center bottom',
   '@media(min-width: 768px)': {
-    bottom: `-200px`,
-    height: `60px`,
+    bottom: `-220px`,
+    height: `50px`,
   },
 })
 
