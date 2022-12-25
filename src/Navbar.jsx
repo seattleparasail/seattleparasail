@@ -1,11 +1,14 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import { AppBar, Box, Button, Container, Toolbar, Typography, Menu, MenuItem, useMediaQuery} from "@mui/material";
 import{Paragliding as ParaglidingIcon, Menu as MenuIcon}  from "@mui/icons-material";
 import { pages } from './Pages'
-import { theme } from './StylesAndThemes/Themes'
+import { AppContext } from './index'
 
 const ResponsiveAppBar = () => {
+  const AppContextState = useContext(AppContext)
+  const { currentTheme } = AppContextState
+
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -28,15 +31,17 @@ const ResponsiveAppBar = () => {
   const isAtLeast600 = useMediaQuery("(min-width:600px)");
   const isAtLeast350 = useMediaQuery("(min-width:350px)");
 
+  const Opacity50 = '99'
+
   return (
     <AppBar
       position="absolute"
-      style={{ backgroundColor: theme.colors.cascadeForestGreen_50_Opacity}}
+      style={{ backgroundColor: `${currentTheme.colors.primary + Opacity50}`}}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <ParaglidingIcon
-            sx={{ fill: theme.colors.galaxyGold, display: { xs: "none", md: "flex", cursor: 'pointer'}, mr: 1 }}
+            sx={{ fill: currentTheme.colors.secondary, display: { xs: "none", md: "flex", cursor: 'pointer'}, mr: 1 }}
             onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
@@ -51,7 +56,7 @@ const ResponsiveAppBar = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: theme.colors.galaxyGold,
+              color: currentTheme.colors.secondary,
               textDecoration: "none",
             }}
           >
@@ -80,7 +85,7 @@ const ResponsiveAppBar = () => {
               PaperProps={{
                 style: {
                   position: "relative",
-                  backgroundColor: theme.colors.cascadeForestGreen_50_Opacity,
+                  backgroundColor: currentTheme.colors.primary + Opacity50,
                   zIndex: 700,
                   height: "300px",
                   width: isAtLeast600 ? "400px" : "100%",
@@ -99,7 +104,7 @@ const ResponsiveAppBar = () => {
                         display: "flex",
                         alignItems: "center",
                         flexWrap: "wrap",
-                        color: theme.colors.galaxyGold,
+                        color: currentTheme.colors.secondary,
                         margin: "5px auto",
                         paddingTop: "20px",
                       }}
@@ -113,7 +118,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <ParaglidingIcon
-            sx={{ fill: theme.colors.galaxyGold, display: { xs: "flex", md: "none" }, mr: 1, cursor: 'pointer' }}
+            sx={{ fill: currentTheme.colors.secondary, display: { xs: "flex", md: "none" }, mr: 1, cursor: 'pointer' }}
             onClick={e => handleNavLinkClick(e, '/')}
           />
           <Typography
@@ -129,7 +134,7 @@ const ResponsiveAppBar = () => {
               fontFamily: "monospace",
               fontWeight: 500,
               letterSpacing: ".1rem",
-              color: theme.colors.galaxyGold,
+              color: currentTheme.colors.secondary,
               textDecoration: "none",
             }}
           >
@@ -141,7 +146,7 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page.name}
                 onClick={e => handleNavLinkClick(e, page.route)}
-                sx={{ my: 2, color: theme.colors.galaxyGold, display: "block" }}
+                sx={{ my: 2, color: currentTheme.colors.secondary, display: "block" }}
               >
                 {page.name}
               </Button>
@@ -152,7 +157,7 @@ const ResponsiveAppBar = () => {
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={e => handleHamburgerClick(e)}
-            sx={{ fill: theme.colors.galaxyGold,  display: { md: "none" }, cursor: 'pointer'}}
+            sx={{ fill: currentTheme.colors.secondary,  display: { md: "none" }, cursor: 'pointer'}}
           >
           
           </MenuIcon>

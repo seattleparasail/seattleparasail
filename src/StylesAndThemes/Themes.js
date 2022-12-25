@@ -1,12 +1,32 @@
 export const theme = {
-    colors: {
-        pioneerMaroon: '#A60B37',
-        emeraldCityGreen: '#238C00',
-        emeraldCityGreen_50_Opacity: '#238C0099',
-        cascadeForestGreen: '#0D4700',
-        cascadeForestGreen_75_Opacity: '#0D4700BF',
-        cascadeForestGreen_50_Opacity: '#0D470099',
-        yellowGold: '#FFD100',
-        galaxyGold: '#E8A900',
+    SuperSonics: {
+        name: 'SuperSonics',
+        colors: {
+            primary: '#0D4700',  //cascadeForestGreen
+            primaryLight: '#238C00', //emeraldCityGreen
+            secondary: '#E8A900', //galaxyGold
+            secondaryLight: '#FFD100', //yellowGold
+            wildcard: '#A60B37' //pioneerMaroon
+        }
+    },
+    SeaHawks: {
+        name: 'SeaHawks',
+        colors: {
+            primary: '#66C010', //kellyGreen
+            primaryLight: '#white', //mettalicSilver,
+            secondary: '#002145', //oxfordBlue,
+            secondaryLight: '#36578c', //royalishBlue
+            wildcard: 'A5ACAF' //mettalicSilver
+        }
+    },
+    Kraken: {
+        name: 'Kraken',
+        colors: {
+            primary: '#001628', //deepSeaBlue
+            primaryLight: '#355464', //boundlessBlue,
+            secondary: '#99D9D9', //iceBlue,
+            secondaryLight: '#68A2B9', //shadowBlue (darker than ice)
+            wildcard: '#E9072B' //redAlert!
+        }
     }
 }
