@@ -25,24 +25,10 @@ const ThemeSelector = () => {
     const { currentTheme, updateThemeChoice } = AppContextState
 
     const handleThemeChange = e => updateThemeChoice(e.target.value)
-    const teamMap = [
-        {
-            value: 'SuperSonics',
-            displayLabel: 'Sonics'
-        },
-        {
-            value: 'SuperSonics',
-            displayLabel: 'Sonics'
-        },
-        {
-            value: 'SuperSonics',
-            displayLabel: 'Sonics'
-        }
-    ]
 
     return (
         <ContainerDiv>
-            <FormControl sx={{ width: '100px' }}>
+            <FormControl sx={{ width: '120px' }}>
                 {/* <InputLabel id="demo-simple-select-label">Age</InputLabel> */}
                 <Select
                     defaultValue={currentTheme.name}
@@ -78,6 +64,9 @@ const ThemeSelector = () => {
                     <MenuItem  value='SuperSonics'>Sonics</MenuItem>
                     <MenuItem value='SeaHawks'>Hawks</MenuItem>
                     <MenuItem value='Kraken'>Kraken</MenuItem>
+                    <MenuItem value='Mariners'>Mariners</MenuItem>
+                    <MenuItem value='Sounders'>Sounders</MenuItem>
+                    <MenuItem value='Huskies'>Huskies</MenuItem>
                 </Select>
             </FormControl>
         </ContainerDiv>

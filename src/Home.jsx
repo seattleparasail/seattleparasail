@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import SkylineSVG from './images/SeattleSkyline'
 import ForestSVG from './images/Forest'
 import SmileyChute from './images/SmileyChute.jpg'
@@ -7,7 +7,7 @@ import ThemeSelector from './ThemeSelector'
 import styled from "@emotion/styled";
 import { css, keyframes } from '@emotion/css'
 import { Anchor as AnchorIcon } from "@mui/icons-material";
-import {AppContext} from './index'
+import { AppContext } from './index'
 
 const Home = () => {
 
@@ -16,18 +16,18 @@ const Home = () => {
 
   return (<>
     <BackgroundDiv />
-    <ThemeSelector/>
+    <ThemeSelector />
     <IntroTextBox>
       <p style={{ fontWeight: 900 }}>FLYING HIGH.</p>
       <p>The Emerald City shines from a Seahawk's perspective. Explore and book your tour.</p>
     </IntroTextBox>
     <SVGContainer>
-      <SkylineSVG style={{ fill: 'white'}}/>
+      <SkylineSVG style={{ fill: 'white' }} />
       <ForestSVG style={{ marginTop: '-10px' }} />
     </SVGContainer>
     <SVGBelowFill />
-    <AnchorText style={{ color: currentTheme.colors.wildcard}}>Anchors Aweigh</AnchorText>
-    <AnchorIconStyled style={{fill: currentTheme.colors.wildcard}} className={css`animation: ${bounce} 5s ease infinite;`} />
+    <AnchorText style={{ color: currentTheme.colors.wildcard }}>Anchors Aweigh</AnchorText>
+    <AnchorIconStyled style={{ fill: currentTheme.colors.wildcard }} className={css`animation: ${bounce} 5s ease infinite;`} />
     <HomeOptions />
   </>)
 }
@@ -93,7 +93,7 @@ const IntroTextBox = styled.div(
     fontSize: '20px',
     zIndex: 2,
     '@media(min-width: 768px)': {
-      fontSize: '40px',
+      fontSize: '33px',
       top: '20vh',
       padding: '40px',
       maxWidth: '400px'
@@ -111,15 +111,12 @@ const bounce = keyframes`
   from, 15% to {
     transform: translate3d(0,0,0);
   }
-
   25% {
     transform: translate3d(0, -30px, 0);
   }
-
   40% {
     transform: translate3d(0, -15px, 0);
   }
-
   70% {
     transform: translate3d(0,-50px,0);
   }
