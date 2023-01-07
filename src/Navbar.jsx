@@ -30,7 +30,6 @@ const ResponsiveAppBar = () => {
 
   const isAtLeast600 = useMediaQuery("(min-width:600px)");
   const isAtLeast350 = useMediaQuery("(min-width:350px)");
-
   const Opacity50 = '99'
 
   return (
@@ -53,7 +52,7 @@ const ResponsiveAppBar = () => {
               cursor: 'pointer',
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: 'Trade Winds',
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: currentTheme.colors.secondary,
@@ -107,6 +106,7 @@ const ResponsiveAppBar = () => {
                         color: currentTheme.colors.secondary,
                         margin: "5px auto",
                         paddingTop: "20px",
+                        fontFamily: 'Trade Winds'
                       }}
                     >
                       <PageIcon sx={{ mr: 1 }} />
@@ -131,7 +131,7 @@ const ResponsiveAppBar = () => {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 2,
-              fontFamily: "monospace",
+              fontFamily: 'Trade Winds',
               fontWeight: 500,
               letterSpacing: ".1rem",
               color: currentTheme.colors.secondary,
@@ -146,7 +146,8 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page.name}
                 onClick={e => handleNavLinkClick(e, page.route)}
-                sx={{ my: 2, color: currentTheme.colors.secondary, display: "block" }}
+                sx={{
+                  my: 2, color: currentTheme.colors.secondary, display: "block", fontFamily: 'Trade Winds'}}
               >
                 {page.name}
               </Button>

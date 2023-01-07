@@ -57,6 +57,7 @@ const FooterContainer = styled.div(
 )
 
 const FooterText = styled.p({
+    fontFamily: 'Trade Winds',
     marginLeft: '3px',
     cursor: 'pointer',
     fontSize: '11px',
