@@ -97,7 +97,10 @@ const ResponsiveAppBar = () => {
                 const PageIcon = page.icon;
 
                 return (
-                  <MenuItem key={page.name} onClick={e => handleNavLinkClick(e, page.route)}>
+                  <MenuItem key={page.name} onClick={e => {
+                    page.name === 'BOOK NOW' ? window.open('https://www.bigskyparasailing.com/book-seattle', '_blank') :
+                      handleNavLinkClick(e, page.route)
+                  }}>
                     <div
                       style={{
                         display: "flex",
@@ -145,7 +148,10 @@ const ResponsiveAppBar = () => {
             {pages.filter(p => !!p.icon).map(page => (
               <Button
                 key={page.name}
-                onClick={e => handleNavLinkClick(e, page.route)}
+                onClick={e => {
+                  page.name === 'BOOK NOW' ? window.open('https://www.bigskyparasailing.com/book-seattle', '_blank') : 
+                  handleNavLinkClick(e, page.route)
+                }}
                 sx={{
                   my: 2, color: currentTheme.colors.secondary, display: "block", fontFamily: 'Trade Winds'}}
               >
