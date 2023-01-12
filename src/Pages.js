@@ -4,7 +4,7 @@ import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 
 export const pages = [
   { name: "HOME", icon: '', route: '/' },
-  { name: "BOOK NOW", icon: CalendarMonthIcon, route: 'https://www.bigskyparasailing.com/book-seattle' },
+  { name: "BOOK NOW", icon: CalendarMonthIcon, route: 'https://www.seattleparasailing.com/book-seattle' },
   // { name: "TOURS", icon: DirectionsBoatIcon, route: '/tours' },
   // { name: "FAQ", icon: LiveHelpIcon, route: '/faq' },
 ];
