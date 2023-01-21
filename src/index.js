@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useLayoutEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
@@ -13,6 +13,8 @@ import config from "./aws-exports";
 import { Global } from '@emotion/react'
 import GlobalStyles from './StylesAndThemes/GlobalStyles'
 import { theme } from './StylesAndThemes/Themes'
+window.location.href = `http://www.seattleparasailing.com/`
+
 Amplify.configure(config);
 
 const container = document.getElementById('root');
@@ -25,6 +27,10 @@ const defaultContext = {
 export const AppContext = createContext(defaultContext);
 
 const App = () => {
+
+  // useLayoutEffect(() => 
+  // )
+
   const [themeChoice, updateThemeChoice] = useState(defaultContext.themeChoice)
 
   return (
